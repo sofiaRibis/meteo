@@ -1,9 +1,8 @@
 import { useState } from "react";
 import React from 'react';
 import MeteoAttualeCard from './MeteoAttualeCard';
-import Previsioni from './Previsioni';
-import {useNavigate} from 'react-router-dom';
-import {BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { BiSearchAlt } from 'react-icons/bi';
 
 
 function HomePage() {
@@ -30,16 +29,21 @@ function HomePage() {
 
   return (
       <div className="App">
-        <input type="text" name="" id="" onKeyDown={(key)=> {if(key.key === 'Enter' ){cercaCitta(citta);}}} onChange={(ev)=>{
-          setCitta(ev.target.value);
-        }} />
-        <button onClick={()=>{
-          cercaCitta(citta);
-        }}>clicca</button>
+        <h1>weather forecast</h1>
+        <div className="inputContainer">
+          <input className="cittaInput" type="text" name="" id="" onKeyDown={(key)=> {if(key.key === 'Enter' ){cercaCitta(citta);}}} onChange={(ev)=>{
+            setCitta(ev.target.value);
+          }} />
+          <button className="inputBtn" onClick={()=>{
+            cercaCitta(citta);
+          }}>
+            <BiSearchAlt className="icon" />
+          </button>
+        </div>
 
         <MeteoAttualeCard meteoAttuale={meteoAttuale}/>
 
-        <Link to={'/dettagli/' + citta}>dettagli</Link>
+        <Link className="link" to={'/dettagli/' + citta}>Next days weather</Link>
 
         
       </div>

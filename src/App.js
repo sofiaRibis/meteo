@@ -1,7 +1,6 @@
 
-import {BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import {BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import Previsioni from './components/Previsioni';
 import HomePage from './components/HomePage';
 import NuovaPagina from "./components/PaginaNuova";
 import NotFound from "./components/NotFound";
