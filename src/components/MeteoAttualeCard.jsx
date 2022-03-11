@@ -1,6 +1,9 @@
 import React from 'react';
 
 const MeteoAttualeCard = ({meteoAttuale}) => {
+    if (!meteoAttuale) {
+        return <div>loading</div>
+    }
   return (
     <div>
         {meteoAttuale.current.condition.text}
