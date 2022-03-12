@@ -29,7 +29,7 @@ function HomePage() {
 
   return (
       //sta cosa della classe del div dice che se la temperatura è superiore di 20 gradi mi cambia lo sfondo
-      <div className={(typeof meteoAttuale !== 'undefined') ? ((meteoAttuale.current.temp_c > 20) ? 'App warm' : 'App') : 'App'}>
+      <div className={(typeof meteoAttuale !== 'undefined') ? ((meteoAttuale.current.temp_c > 20) ? 'App warm' : 'App') : 'App city'}>
         <div className="shadow">
         <h1>weather forecast</h1>
         <div className="inputContainer">

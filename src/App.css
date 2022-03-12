@@ -32,6 +32,10 @@ h1 {
 	background-image: url("./assets/desert.png");
 }
 
+.city {
+	background-image: url("./assets/City-sunset.png");
+}
+
 .default {
 	margin: 50px;
 }
