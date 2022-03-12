@@ -1,9 +1,35 @@
 * {
 	box-sizing: border-box;
+	margin: 0;
 }
 
 .App {
+	height: 100vh;
 	text-align: center;
+	background-position: center;
+	background-size: cover;
+	background-image: url("./assets/Snow-sunset.png");
+	transition: all 1s;
+	color: white;
+}
+
+h1 {
+	padding-top: 30px;
+}
+
+.shadow {
+	background-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 0.2),
+		rgba(0, 0, 0, 0.75)
+	);
+
+	height: 100%;
+	transition: all 1s;
+}
+
+.warm {
+	background-image: url("./assets/desert.png");
 }
 
 .default {
@@ -32,8 +58,8 @@ img {
 	margin: 40px auto;
 	display: flex;
 	justify-content: space-between;
-	width: max-content;
-	background-color: rgba(95, 158, 160, 0.347);
+	width: 60%;
+	background-color: rgba(212, 212, 212, 0.347);
 	border-radius: 5px;
 }
 
@@ -41,6 +67,8 @@ img {
 	background-color: transparent;
 	border: none;
 	padding: 8px 20px;
+	color: black;
+	width: 90%;
 }
 
 .cittaInput:focus {
@@ -48,7 +76,7 @@ img {
 }
 
 .inputBtn {
-	background-color: rgba(95, 158, 160, 0.611);
+	background-color: rgba(212, 212, 212, 0.507);
 	/*background-color: transparent; */
 	color: white;
 	border: none;
@@ -78,7 +106,7 @@ img {
 }
 
 .link {
-	background-color: cadetblue;
+	background-color: rgba(212, 212, 212, 0.507);
 	color: white;
 	padding: 8px 20px;
 	text-decoration: none;
@@ -87,12 +115,15 @@ img {
 }
 
 .link:hover {
-	background-color: rgb(110, 187, 190);
+	background-color: rgba(64, 164, 204, 0.507);
 	font-size: 1.05em;
 }
 
 .paginaNuovaContainer {
 	text-align: center;
+	height: 100vh;
+	background-color: rgba(141, 103, 164, 0.583);
+	color: white;
 }
 
 .paginaNuovaHeader {
@@ -101,10 +132,14 @@ img {
 	align-items: center;
 }
 
+.paginaNuovaHeader h2 {
+	margin-top: 20px;
+}
+
 .goHome {
 	position: absolute;
-	top: 15px;
-	left: 15px;
+	top: 20px;
+	left: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -119,9 +154,21 @@ img {
 }
 
 .singleCardsContainer {
-	margin-top: 50px;
+	margin-top: 100px;
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
+}
+
+.dettagliPrevisioneContainer {
+	background-image: url("./assets/Snow-sunset.png");
+	background-size: cover;
+	color: white;
+	border-radius: 10px;
+	width: 30%;
+}
+
+.dettagliPrevisioneContainer .shadow {
+	padding: 30px 1px;
+	border-radius: 10px;
 }

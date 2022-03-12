@@ -3,8 +3,13 @@ import { BiTime } from 'react-icons/bi';
 
 const DettagliPrevisione = ({giorno}) => {
   return (
-    <div className='dettagliPrevisioneContainer'>
-      
+    //! questo invefce non funziona
+    <div className={(typeof giorno !== 'undefined') ? ((giorno.day.avgtemp_c > 20) ? 'dettagliPrevisioneContainer warm' : 'dettagliPrevisioneContainer') : 'dettagliPrevisioneContainer'}>
+
+      {/* 
+      className={(typeof giorno !== 'dundefined) ? ((giorno.day.avgtemp_c > 20) ? 'dettagliPrevisioneContainer warm' : 'dettagliPrevisioneContainer') : 'dettagliPrevisioneContainer'}
+      */}
+      <div className='shadow'>
 
       <div className='date'>
         <BiTime className='icon time'/> {giorno.date}
@@ -21,6 +26,9 @@ const DettagliPrevisione = ({giorno}) => {
       <div className='degrees'>
         {giorno.day.avgtemp_c  + '°C'}
       </div>
+
+      </div>
+
     </div>
   )
 }

@@ -28,7 +28,9 @@ function HomePage() {
 
 
   return (
-      <div className="App">
+      //sta cosa della classe del div dice che se la temperatura è superiore di 20 gradi mi cambia lo sfondo
+      <div className={(typeof meteoAttuale !== 'undefined') ? ((meteoAttuale.current.temp_c > 20) ? 'App warm' : 'App') : 'App'}>
+        <div className="shadow">
         <h1>weather forecast</h1>
         <div className="inputContainer">
           <input className="cittaInput" type="text" name="" id="" onKeyDown={(key)=> {if(key.key === 'Enter' ){cercaCitta(citta);}}} onChange={(ev)=>{
@@ -46,6 +48,8 @@ function HomePage() {
         <Link className="link" to={'/dettagli/' + citta}>Next days weather</Link>
 
         
+
+        </div>
       </div>
       
   );
