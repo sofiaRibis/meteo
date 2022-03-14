@@ -1,9 +1,25 @@
 import React from 'react'
 import { BiTime } from 'react-icons/bi';
+import DettagliOrari from './DettagliOrari';
 
 const DettagliPrevisione = ({giorno}) => {
+
+  function showDettagliOrari(padre){
+    var element = document.querySelector(padre +'.dettagliOrari')
+    console.log(padre +'dettagliOrari')
+    Array.from(element).forEach(item => {
+      if (item.style.display === "none") {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+
   return (
-    <div className={(giorno.day.avgtemp_c > 20) ? 'dettagliPrevisioneContainer warm' : 'dettagliPrevisioneContainer'}>
+    <div className={(giorno.day.avgtemp_c > 20) ? 'dettagliPrevisioneContainer warm' : 'dettagliPrevisioneContainer'} onClick={(e)=>{
+      showDettagliOrari(e.target.tag)
+    }}>
 
       <div className='shadow'>
 
@@ -23,8 +39,14 @@ const DettagliPrevisione = ({giorno}) => {
         {giorno.day.avgtemp_c  + '°C'}
       </div>
 
+      <div className='dettagliOrari'>
+        <DettagliOrari ora={giorno.hour[0]}/>
+        <DettagliOrari ora={giorno.hour[7]}/>
+        <DettagliOrari ora={giorno.hour[11]}/>
+        <DettagliOrari ora={giorno.hour[16]}/>
       </div>
 
+      </div>
     </div>
   )
 }

@@ -136,6 +136,10 @@ img {
 	align-items: center;
 }
 
+.dettagliOrari{
+	display: none;
+}
+
 .paginaNuovaHeader h2 {
 	margin-top: 20px;
 }
