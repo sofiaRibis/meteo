@@ -3,6 +3,10 @@
 	margin: 0;
 }
 
+*::first-letter{
+	text-transform: capitalize;
+}
+
 .App {
 	height: 100vh;
 	text-align: center;
@@ -26,10 +30,6 @@ h1 {
 
 	height: 100%;
 	transition: all 1s;
-}
-
-.warm {
-	background-image: url("./assets/desert.png");
 }
 
 .city {
@@ -172,7 +172,12 @@ img {
 	width: 30%;
 }
 
+.warm {
+	background-image: url("./assets/desert.png");
+}
+
 .dettagliPrevisioneContainer .shadow {
 	padding: 30px 1px;
 	border-radius: 10px;
 }
+
