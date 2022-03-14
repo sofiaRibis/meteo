@@ -35,7 +35,7 @@ const NuovaPagina = () => {
       
     
     if(!previsioni) {
-        return <div>loading</div>
+        return <div className='loading'>loading</div>
     } else return (
         <div className='paginaNuovaContainer'>
             <div className='paginaNuovaHeader'>

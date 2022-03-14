@@ -75,6 +75,10 @@ img {
 	width: 90%;
 }
 
+.inputContainer:hover {
+	background-color: rgba(231, 231, 231, 0.347);
+}
+
 .cittaInput:focus {
 	outline: none;
 }
@@ -110,7 +114,7 @@ img {
 }
 
 .link {
-	background-color: rgba(212, 212, 212, 0.507);
+	background-color: rgba(121, 121, 121, 0.507);
 	color: white;
 	padding: 8px 20px;
 	text-decoration: none;
@@ -123,7 +127,7 @@ img {
 	font-size: 1.05em;
 }
 
-.paginaNuovaContainer {
+.paginaNuovaContainer, .loading{
 	text-align: center;
 	height: 100vh;
 	background-color: rgba(141, 103, 164, 0.583);
