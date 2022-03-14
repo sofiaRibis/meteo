@@ -1,0 +1,19 @@
+.orariFlex{
+    height: 9vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1vh 0;
+}
+.orariFlex img{
+    height: 7vh;
+    width: 7vh;
+}
+.testiUlteriori{
+    width: 30%;
+    font-size: 1.1rem;
+}
+.orario{
+    width: 30%;
+    font-size: 1.7rem;
+}

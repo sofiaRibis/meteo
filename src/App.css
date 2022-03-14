@@ -3,6 +3,10 @@
 	margin: 0;
 }
 
+*::first-letter{
+	text-transform: capitalize;
+}
+
 .App {
 	height: 100vh;
 	text-align: center;
@@ -26,10 +30,6 @@ h1 {
 
 	height: 100%;
 	transition: all 1s;
-}
-
-.warm {
-	background-image: url("./assets/desert.png");
 }
 
 .city {
@@ -75,6 +75,10 @@ img {
 	width: 90%;
 }
 
+.inputContainer:hover {
+	background-color: rgba(231, 231, 231, 0.347);
+}
+
 .cittaInput:focus {
 	outline: none;
 }
@@ -110,7 +114,7 @@ img {
 }
 
 .link {
-	background-color: rgba(212, 212, 212, 0.507);
+	background-color: rgba(121, 121, 121, 0.507);
 	color: white;
 	padding: 8px 20px;
 	text-decoration: none;
@@ -123,7 +127,7 @@ img {
 	font-size: 1.05em;
 }
 
-.paginaNuovaContainer {
+.paginaNuovaContainer, .loading{
 	text-align: center;
 	height: 100vh;
 	background-color: rgba(141, 103, 164, 0.583);
@@ -134,6 +138,12 @@ img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.dettagliOrari{
+	display: none;
+	padding-top: 3.5vh;
+	height: 38.4vh;
 }
 
 .paginaNuovaHeader h2 {
@@ -158,10 +168,15 @@ img {
 }
 
 .singleCardsContainer {
-	margin-top: 100px;
+	user-select: none;
+	margin-top: 85px;
 	display: flex;
 	justify-content: space-around;
-	align-items: center;
+	align-items: flex-start;
+}
+
+.singleCardsContainer img{
+	-webkit-user-drag: none;
 }
 
 .dettagliPrevisioneContainer {
@@ -170,9 +185,55 @@ img {
 	color: white;
 	border-radius: 10px;
 	width: 30%;
+	opacity: 0.85;
+}
+
+.warm {
+	background-image: url("./assets/desert.png");
 }
 
 .dettagliPrevisioneContainer .shadow {
-	padding: 30px 1px;
+	padding: 30px 1px 30px;
 	border-radius: 10px;
+}
+
+.dettagliPrevisioneContainer:hover {
+	opacity: 1;
+}
+
+@-webkit-keyframes fadeIn {
+    from{
+		height: 0; 
+		opacity: 0;
+	}
+    to{ 
+		height: 328px;
+		opacity: 1; 
+	}
+}
+@keyframes fadeIn {
+    from{
+		height: 0; 
+		opacity: 0;
+	}
+	50%{
+		opacity: 0;
+	}
+    to{ 
+		height: 38.4vh;
+		opacity: 1; 
+	}
+}
+@keyframes fadeOut{
+	from{
+		height: 38.4vh; 
+		opacity: 1;
+	}
+	50%{
+		opacity: 1;
+	}
+    to{ 
+		height: 0;
+		opacity: 0; 
+	}
 }
