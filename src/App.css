@@ -138,6 +138,8 @@ img {
 
 .dettagliOrari{
 	display: none;
+	padding-top: 3.5vh;
+	height: 38.4vh;
 }
 
 .paginaNuovaHeader h2 {
@@ -162,10 +164,15 @@ img {
 }
 
 .singleCardsContainer {
-	margin-top: 100px;
+	user-select: none;
+	margin-top: 85px;
 	display: flex;
 	justify-content: space-around;
-	align-items: center;
+	align-items: flex-start;
+}
+
+.singleCardsContainer img{
+	-webkit-user-drag: none;
 }
 
 .dettagliPrevisioneContainer {
@@ -174,6 +181,7 @@ img {
 	color: white;
 	border-radius: 10px;
 	width: 30%;
+	opacity: 0.85;
 }
 
 .warm {
@@ -181,7 +189,47 @@ img {
 }
 
 .dettagliPrevisioneContainer .shadow {
-	padding: 30px 1px;
+	padding: 30px 1px 30px;
 	border-radius: 10px;
 }
 
+.dettagliPrevisioneContainer:hover {
+	opacity: 1;
+}
+
+@-webkit-keyframes fadeIn {
+    from{
+		height: 0; 
+		opacity: 0;
+	}
+    to{ 
+		height: 328px;
+		opacity: 1; 
+	}
+}
+@keyframes fadeIn {
+    from{
+		height: 0; 
+		opacity: 0;
+	}
+	50%{
+		opacity: 0;
+	}
+    to{ 
+		height: 38.4vh;
+		opacity: 1; 
+	}
+}
+@keyframes fadeOut{
+	from{
+		height: 38.4vh; 
+		opacity: 1;
+	}
+	50%{
+		opacity: 1;
+	}
+    to{ 
+		height: 0;
+		opacity: 0; 
+	}
+}

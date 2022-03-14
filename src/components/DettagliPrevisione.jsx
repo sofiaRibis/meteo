@@ -1,24 +1,21 @@
+import { wait } from '@testing-library/user-event/dist/utils';
 import React from 'react'
 import { BiTime } from 'react-icons/bi';
 import DettagliOrari from './DettagliOrari';
 
 const DettagliPrevisione = ({giorno}) => {
 
-  function showDettagliOrari(padre){
-    var element = document.querySelector(padre +'.dettagliOrari')
-    console.log(padre +'dettagliOrari')
-    Array.from(element).forEach(item => {
-      if (item.style.display === "none") {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
-    });
-  }
-
   return (
     <div className={(giorno.day.avgtemp_c > 20) ? 'dettagliPrevisioneContainer warm' : 'dettagliPrevisioneContainer'} onClick={(e)=>{
-      showDettagliOrari(e.target.tag)
+      let element = e.currentTarget.querySelector('.dettagliOrari')
+      if (element.style.display == 'none'){  //Per qualche ragione la prima volta serve un doppio click, poi ne basta uno
+        element.style.animation = 'fadeIn 0.5s';
+        element.style.display = "block";
+      }
+      else {
+        element.style.animation = 'fadeOut 0.5s'; //! Fade out non funziona
+        element.style.display = "none";
+      }
     }}>
 
       <div className='shadow'>
@@ -42,7 +39,7 @@ const DettagliPrevisione = ({giorno}) => {
       <div className='dettagliOrari'>
         <DettagliOrari ora={giorno.hour[0]}/>
         <DettagliOrari ora={giorno.hour[7]}/>
-        <DettagliOrari ora={giorno.hour[11]}/>
+        <DettagliOrari ora={giorno.hour[12]}/>
         <DettagliOrari ora={giorno.hour[16]}/>
       </div>
 
