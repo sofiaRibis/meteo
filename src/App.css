@@ -141,9 +141,7 @@ img {
 }
 
 .dettagliOrari{
-	display: none;
 	padding-top: 3.5vh;
-	height: 38.4vh;
 }
 
 .paginaNuovaHeader h2 {
@@ -186,6 +184,8 @@ img {
 	border-radius: 10px;
 	width: 30%;
 	opacity: 0.85;
+	height: 41vh;
+	transition: all 0.4s;
 }
 
 .warm {
@@ -201,39 +201,3 @@ img {
 	opacity: 1;
 }
 
-@-webkit-keyframes fadeIn {
-    from{
-		height: 0; 
-		opacity: 0;
-	}
-    to{ 
-		height: 328px;
-		opacity: 1; 
-	}
-}
-@keyframes fadeIn {
-    from{
-		height: 0; 
-		opacity: 0;
-	}
-	50%{
-		opacity: 0;
-	}
-    to{ 
-		height: 38.4vh;
-		opacity: 1; 
-	}
-}
-@keyframes fadeOut{
-	from{
-		height: 38.4vh; 
-		opacity: 1;
-	}
-	50%{
-		opacity: 1;
-	}
-    to{ 
-		height: 0;
-		opacity: 0; 
-	}
-}
