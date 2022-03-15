@@ -18,10 +18,8 @@ const DettagliPrevisione = ({giorno}) => {
 
   return (
     <div className={(giorno.day.avgtemp_c > 20) ? 'dettagliPrevisioneContainer warm' : 'dettagliPrevisioneContainer'} onClick={(ev)=>{
-      pulsantePremuto === true ? ev.currentTarget.style.height = '41vh' : ev.currentTarget.style.height = '80vh'
-      pulsantePremuto === true ? setPulsantePremuto(!pulsantePremuto) : setTimeout(() => {
+      pulsantePremuto === true ? ev.currentTarget.classList.remove('extended') : ev.currentTarget.classList.add('extended')
         setPulsantePremuto(!pulsantePremuto)
-      }, 300);    
     }}>
 
       <div className='shadow'>

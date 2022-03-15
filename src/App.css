@@ -177,7 +177,7 @@ img {
 	-webkit-user-drag: none;
 }
 
-.dettagliPrevisioneContainer {
+.dettagliPrevisioneContainer{
 	background-image: url("./assets/Snow-sunset.png");
 	background-size: cover;
 	color: white;
@@ -186,6 +186,19 @@ img {
 	opacity: 0.85;
 	height: 41vh;
 	transition: all 0.4s;
+}
+
+.dettagliPrevisioneContainer.extended{
+	height: 80vh;
+}
+
+.dettagliPrevisioneContainer .dettagliOrari{
+	opacity: 0;
+	transition: all 1s;
+}
+
+.dettagliPrevisioneContainer.extended .dettagliOrari{
+	opacity: 1;
 }
 
 .warm {
